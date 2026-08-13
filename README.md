@@ -82,7 +82,6 @@ Each task has **one accountable owner**. Other team members may assist, review o
 | Project / Delivery Lead | Sprint coordination, board hygiene, blockers and delivery |
 | Backend / Integration Lead | APIs, data handling, business logic and integrations |
 | Frontend / UX Lead | User interface, customer flows and usability |
-| AI / Automation Lead | Deflection logic, prompts, decision flows or automation |
 | QA / Documentation Lead | Testing, acceptance criteria, audit trail and documentation |
 
 > Roles may overlap depending on team size and technical approach.

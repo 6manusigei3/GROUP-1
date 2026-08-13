@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns & Refunds - Northstar</title>
 
+    <link
+        rel="stylesheet"
+        href="{{ url_for('main.static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <header>
+        <h1>Returns & Refunds</h1>
+        <a href="{{ url_for('main.index') }}">← Back to Support</a>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h2>Check Your Return</h2>
+            <p>
+                Enter your Northstar order number to check
+                your return status and instructions.
+            </p>
+        </section>
+
+        <form method="POST" class="form-card">
+
+            <label for="order_number">
+                Order Number
+            </label>
+
+            <input
+                type="text"
+                id="order_number"
+                name="order_number"
+                placeholder="Example: NS1001"
+                required
+            >
+
+            <button type="submit">
+                Check Return
+            </button>
+
+        </form>
+
+        {% if error %}
+            <div class="error">
+                <strong>Unable to find return information.</strong>
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+
+        {% if return_info %}
+
+            <section class="result">
+
+                <h2>Return Information</h2>
+
+                <p>
+                    <strong>Order Number:</strong>
+                    {{ return_info["order_number"] }}
+                </p>
+
+                <p>
+                    <strong>Product:</strong>
+                    {{ return_info["product"] }}
+                </p>
+
+                <p>
+                    <strong>Return Status:</strong>
+                    {{ return_info["return_status"] }}
+                </p>
+
+                <div class="instructions">
+                    <h3>What you need to do</h3>
+
+                    <p>
+                        {{ return_info["instructions"] }}
+                    </p>
+                </div>
+
+                {% if return_info["return_status"] == "Eligible" %}
+
+                    <div class="success">
+                        Your order is eligible for return.
+                    </div>
+
+                {% elif return_info["return_status"] == "Completed" %}
+
+                    <div class="info">
+                        This return has already been completed.
+                    </div>
+
+                {% endif %}
+
+            </section>
+
+        {% endif %}
+
+    </main>
+
+</body>
+</html>

@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status - Northstar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
+<body>
+
+    <header>
+        <h1>Order Status</h1>
+        <a href="{{ url_for('main.index') }}">← Back to Support</a>
+    </header>
+
+    <main class="container">
+
+        <form method="POST" class="form-card">
+
+            <label for="order_number">
+                Enter your order number
+            </label>
+
+            <input
+                type="text"
+                id="order_number"
+                name="order_number"
+                placeholder="Example: NS1001"
+                required
+            >
+
+            <button type="submit">
+                Check Order
+            </button>
+
+        </form>
+
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        {% if order %}
+            <section class="result">
+
+                <h2>Order {{ order["order_number"] }}</h2>
+
+                <p>
+                    <strong>Customer:</strong>
+                    {{ order["customer_name"] }}
+                </p>
+
+                <p>
+                    <strong>Product:</strong>
+                    {{ order["product"] }}
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    {{ order["status"] }}
+                </p>
+
+                <p>
+                    <strong>Expected delivery:</strong>
+                    {{ order["expected_delivery"] }}
+                </p>
+
+            </section>
+        {% endif %}
+
+    </main>
+
+</body>
+</html>

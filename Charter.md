@@ -492,7 +492,7 @@ By signing below, team members confirm that they have read, discussed, and agree
 
 Team Member	    Role	-- Signature	--Date
 1. Fidel Katee  member  Fkatee,      14/8/2026
-2. 
+2. Emmanuel Sigei member  Esigei     14/8/2026
 
 
 Charter Status: Agreed and signed before build work begins.

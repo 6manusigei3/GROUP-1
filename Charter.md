@@ -494,6 +494,7 @@ Team Member	    Role	-- Signature	--Date
 1. Fidel Katee  member  Fkatee,      14/8/2026
 2. Emmanuel Sigei member  Esigei     14/8/2026
 3. Trizah  Biwott member   Tbiwott    14/8/2026
+4. Tambo Prince member Oneal 15/08/2026
 
 
 Charter Status: Agreed and signed before build work begins.
